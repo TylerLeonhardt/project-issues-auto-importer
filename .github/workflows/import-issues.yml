@@ -14,10 +14,10 @@ jobs:
             - name: Install Node.js
               uses: actions/setup-node@v1
               with:
-                  node-version: "14"
-            - run: yarn install --immutable
-            - run: yarn build
-            - run: yarn run importIssues
+                  node-version: "22"
+            - run: npm ci
+            - run: npm run build
+            - run: npm run importIssues
               env:
                   GITHUB_AUTH_TOKEN: ${{ secrets.GH_TOKEN }}
                   GIST_ID: ${{ secrets.GIST_ID }}
